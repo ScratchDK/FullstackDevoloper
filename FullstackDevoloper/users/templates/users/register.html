@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    <h1>Регистрация</h1>
+{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}"/>
+    <!--    Параметр next нужен чтобы вернуться на туже страницу с которой перешел на авторизацию-->
+        <div class="form-error">{{ form.non_field_errors }}</div>
+            <div class="alert alert-warning">
+                <table class="tab-clients" frame="1">
+                    {% for i in form %}
+                    <tr>
+                        <th><p><label class="form-label" for="{{ i.id_for_label }}">{{ i.label }}</label></p></th>
+                        <th><p>{{ i }}</p></th>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <p><button class="btn-add" type="submit">Зарегистрировать</button></p>
+            </div>
+    </form>
+{% endblock %}

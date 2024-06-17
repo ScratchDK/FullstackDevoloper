@@ -1,0 +1,42 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    <h1>Таблица клиентов</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="alert alert-warning">
+        <table class="tab-clients" frame="1">
+            <tr>
+                <th><p>Номер счета</p></th>
+                <th><p>Имя</p></th>
+                <th><p>Фамилия</p></th>
+                <th><p>Отчество</p></th>
+                <th><p>Дата рождения</p></th>
+                <th><p>ИНН</p></th>
+                <th><p>Статус</p></th>
+                <th><p>Ответственное лицо</p></th>
+                <th><p><a href="{% url 'create' %}">Добавить</a></p></th>
+            </tr>
+            {% for i in clients %}
+            <tr>
+                <th><p>{{ i.account_number }}</p></th>
+                <th><p>{{ i.first_name }}</p></th>
+                <th><p>{{ i.last_name }}</p></th>
+                <th><p>{{ i.middle_name }}</p></th>
+                <th><p>{{ i.date_birth }}</p></th>
+                <th><p>{{ i.inn }}</p></th>
+                <th><p>{{ i.status }}</p></th>
+                <th><p>{{ i.manager }}</p></th>
+                <th><p><a href="{% url 'update' i.id %}">Редактировать</a></p></th>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
+{% block basement %}
+     <form method="post" action="{% url 'users:logout' %}">
+        {% csrf_token %}
+        <button class="btn-exit" type="submit">Выйти</button>
+    </form>
+{% endblock %}

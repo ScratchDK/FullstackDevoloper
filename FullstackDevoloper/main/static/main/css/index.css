@@ -1,0 +1,78 @@
+html {
+    font-size: calc(2px + 1vw);
+}
+
+body {
+    background: whitesmoke;
+
+}
+
+.header {
+    height: 10vh;
+}
+
+.title-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.content-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.basement-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.alert-warning {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    clear: both;
+    text-align: center;
+}
+
+.alert-warning table, td, th {
+    border: 3px solid black;
+}
+
+.alert-warning td, th {
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.btn-exit {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    width: 100px;
+    height: 30px;
+    color: whitesmoke;
+    background: red;
+}
+
+.btn-add {
+    width: auto;
+    height: 30px;
+    color: whitesmoke;
+    background: darkseagreen;
+}
+
+a {
+    text-decoration: none;
+    color: cornflowerblue;
+}
+
+.btn-reg {
+    width: auto;
+    height: 30px;
+    color: whitesmoke;
+    background: dodgerblue;
+}
